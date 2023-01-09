@@ -18,45 +18,14 @@
 </head>
 
 <body>
-    <script>
-        var html = '<li><a href="#profile">\
-                        <img src="boy.png" height="100.0" width="100.0">\
-                        <h2>Moaz</h2>\
-                    </a>\
-                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase\
-                        album</a>\
-                </li>';
-        var arrList = [{ "id": 1, "name": "moaz", "phone": "tel:+123456789", "gender": "male", "email": "ahmedward@gmail.com" }, { "id": 2, "name": "Ahmed", "phone": "tel:+123456789", "gender": "male", "email": "moazkhalede@gmail.com" }, { "id": 1, "name": "Hossam", "phone": "tel:+123456789", "gender": "male", "email": "hossamFadally@gmail.com" }]
-        function addToArrList(name, phone, gender, email) {
-            $("#arrList").append(html)
-            console.log(gender+"     "+email);
-            const map1 = new Map();
-            map1.set('id',arrList.length + 1)
-            map1.set('name', name);
-            map1.set('email', email);
-            map1.set('gender', gender);
-            map1.set('phone', phone);
-            arrList.push(map1);
-            $("#arrList").empty();
-            for (i = 0; i < arrList.length; i++) {
-                $("#arrList").append(html)
-            }
-        }
-
-        // $(document).ready(function () {
-        //     for (i = 0; i < arrList.length; i++) {
-        //         $("#arrList").append("<li><a href='#profile'><img src='boy.png' height='100.0' width='100.0'><h2>"+arrList[i]["name"]+"</h2></a><a href='tel:"+arrList[i]["phone"]+"' data-rel='popup' data-position-to='window' data-transition='pop'>Purchase album</a></li>")
-        //     }
-        // })
-
-    </script>
+    
     <section data-role="page" id="firstPage">
         <header data-role="header">
             <a href="#newContactPage" class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ">Add</a>
             <h1>Contact List</h1>
         </header>
 
-        <article data-role="content">
+        <article data-role="content" id="articleList">
             <ul id="arrList" data-role="listview" data-split-icon="phone" data-split-theme="a" data-inset="true"
                 data-filter="true" data-inset="true">
                 <li><a href="#profile">
@@ -76,7 +45,7 @@
                 </li>
                 <li><a href="#profile">
                         <img src="boy.png" height="100.0" width="100.0">
-                        <h2>Moaz</h2>
+                        <h2>Moaz1</h2>
                     </a>
                     <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase
                         album</a>
@@ -127,7 +96,7 @@
                 <div class="center">
                     <a href="#firstPage"
                         onclick="addToArrList($('#text-Name').val(),$('#text-Phone').val(),$('#email').val(),$('#genderSelector').val())"
-                        class="ui-btn ui-icon-check  ui-btn-inline ui-btn-icon-left">Save</a>
+                        class="ui-btn ui-icon-check ui-btn-inline ui-btn-icon-left">Save</a>
                     <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-btn-inline">Cancel</a>
                 </div>
 
@@ -179,6 +148,49 @@
             <h1>Contact Data</h1>
         </footer>
     </section>
+
+    <script>
+        var arrList = [{ "id": 1, "name": "moazzz", "phone": "tel:+123456789", "gender": "male", "email": "ahmedward@gmail.com" }, { "id": 2, "name": "Ahmed", "phone": "tel:+123456789", "gender": "male", "email": "moazkhalede@gmail.com" }, { "id": 1, "name": "Hossam", "phone": "tel:+123456789", "gender": "male", "email": "hossamFadally@gmail.com" }]
+        function addToArrList(name, phone, gender, email) {
+            var element = { "id": 1, "name": name, "phone": "tel:+"+phone, "gender": gender, "email": email };
+            
+            arrList.push(element);
+            console.log(arrList);
+            //$("#arrList").empty();
+            for (i = 0; i < arrList.length; i++) {
+                $("#arrList").append('<li>'+
+                    '<a href="#profile">'+
+                    '<img src="boy.png" height="100.0" width="100.0">'+
+                    '<h2>'+arrList[i]["name"]+'</h2>'+
+                    '</a>'+
+                    '<a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase'+
+                    'album</a>'+
+                '</li>')
+                $('#arrList').listview('refresh')
+            
+            }
+        }
+
+    //     $(document).ready(function () {
+    //         addToArrList("hhh","aaa","ggg","eee");
+            // '<article data-role="content">'+
+            // '<ul id="arrList" data-role="listview" data-split-icon="phone" data-split-theme="a" data-inset="true"'+
+            // '    data-filter="true" data-inset="true">'
+    //         for (i = 0; i < arrList.length; i++) {
+                // '<li>'+
+                //     '<a href="#profile">'+
+                //     '    <img src="boy.png" height="100.0" width="100.0">'+
+                //     '    <h2>'+arrList[i]["name"]+'</h2>'+
+                //     '</a>'+
+                //     '<a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase'+
+                //     '    album</a>'+
+                // '</li>'
+    //         }
+    //     '</ul>'
+    // '</article>'
+    //     })
+
+    </script>
 
 </body>
 
