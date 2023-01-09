@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script type="text/javascript" src=" http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+
+        }
+    </style>
+</head>
+
+<body>
+    <section data-role="page" id="firstPage">
+        <header data-role="header">
+            <a href="#newContactPage" class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ">Add</a>
+            <h1>Contact List</h1>
+        </header>
+
+        <article data-role="content">
+            <ul data-role="listview" data-split-icon="phone" data-split-theme="a" data-inset="true" data-filter="true"
+                data-inset="true">
+                <li><a href="#profile">
+                        <img src="boy.png">
+                        <h2>Ahmed ward</h2>
+                    </a>
+                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">
+                        album</a>
+                </li>
+                <li>
+                    <a href="#profile">
+                        <img src="boy.png">
+                        <h2>Hossam</h2>
+                    </a>
+                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase
+                        album</a>
+                </li>
+                <li><a href="#profile">
+                        <img src="boy.png">
+                        <h2>Moaz</h2>
+                    </a>
+                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase
+                        album</a>
+                </li>
+            </ul>
+            <div data-role="popup" id="purchase" data-theme="a" data-overlay-theme="b" class="ui-content"
+                style="max-width:340px; padding-bottom:2em;">
+                <h3>call?</h3>
+                <p>are you sure you want call?</p>
+                <a href="index.html" data-rel="back"
+                    class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left ui-btn-inline ui-mini">call</a>
+                <a href="index.html" data-rel="back"
+                    class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Cancel</a>
+            </div>
+        </article>
+        <footer data-role="footer">
+            <h1>Contact List</h1>
+        </footer>
+    </section>
+
+    <section data-role="page" id="newContactPage" data-add-back-btn="true">
+        <article data-role="content">
+            <header data-role="header">
+                <a href="#firstPage" class="ui-btn ui-btn-inline ui-icon-carat-l ui-btn-icon-left">Back</a>
+                <h1>New Contact</h1>
+            </header>
+            <form>
+                <div class="ui-field-contain">
+                    <label for="text-12">Name</label>
+                    <input type="text" name="text-12" id="text-12" value="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="text-13">Phone</label>
+                    <input data-clear-btn="true" name="text-13" id="text-13" value="" placeholder="(202)555-5555">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="search-8">email</label>
+                    <input type="email" name="search-8" id="search-8" value="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="flip-select">Gender</label>
+                    <select id="flip-select" name="flip-select" data-role="flipswitch">
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+
+                <div class="center">
+                    <a href="#firstPage" class="ui-btn ui-icon-check  ui-btn-inline ui-btn-icon-left">Save</a>
+                    <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-btn-inline">Cancel</a>
+                </div>
+
+                <footer data-role="footer">
+                    <h1>New Contact</h1>
+                </footer>
+        </article>
+
+    </section>
+
+    <section data-role="page" id="dialogDelete" data-dialog="true">
+        <header data-role="header">
+            <h1>Delete dialog</h1>
+        </header>
+        <h3 style="padding-left: 7px;">delete</h3>
+        <p style="padding-left: 7px;">are you sure you want to delete it?</p>
+        <div style="top: 50%;">
+            <a href="index.html" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Cancel</a>
+            <a href="index.html" data-rel="back"
+                class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left ui-btn-inline ui-mini">delete</a>
+        </div>
+    </section>
+
+    <section data-role="page" id="profile">
+
+        <header data-role="header">
+            <a href="#firstPage" class="ui-btn ui-btn-inline ui-icon-carat-l ui-btn-icon-left">back</a>
+            <h1> Ahmed Ward</h1>
+        </header>
+
+        <article data-role="content">
+            <img src="boy.png" width="200" height="200"></img>
+            <div>
+                <!-- <a href="#dialogDelete" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left"></a>
+                <a href="#newContactPage" class="ui-btn ui-btn-inline ui-icon-edit ui-btn-icon-left"></a>
+                <a href="#newContactPage" class="ui-btn ui-btn-inline ui-icon-phone ui-btn-icon-left"></a> -->
+
+                    <a href="#dialogDelete"
+                    class="ui-btn ui-shadow ui-corner-all ui-icon-delete  ui-btn-icon-notext ui-btn-inline">delete</a>
+                    <a href="#dialogDelete"
+                    class="ui-btn ui-shadow ui-corner-all ui-icon-edit ui-btn-icon-notext ui-btn-inline">edit</a>
+                    <a href="#dialogDelete"
+                    class="ui-btn ui-shadow ui-corner-all ui-icon-phone ui-btn-icon-notext ui-btn-inline">call</a>
+            </div>
+
+        </article>
+
+        <footer data-role="footer">
+            <h1>Contact Data</h1>
+        </footer>
+    </section>
+
+</body>
+
+</html>
